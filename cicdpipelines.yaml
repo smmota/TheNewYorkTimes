@@ -1,30 +1,23 @@
 name : CI/CD Pipeline
 
-
 on:
   push:
     branches:
       - main
 
-
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
-
     steps:
-      - name: Checkout Repository
+      - name: Verificar código
         uses: actions/checkout@v2
 
-      
-      - name: Login to Docker Hub
-        run: echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
+      - name: Restaurar pacotes
+        run: dotnet restore
 
-
-      - name: Build and Push Docker Image
-        run: |
-          docker build -t smmota/thenewyorktimesapi:latest .
-          docker push smmota/thenewyorktimesapi:latest
+      - name: Publicar aplicação
+        run dotnet publish -c Release -o ./publish
 
       - name: Set up kubectl
         uses: azure/k8s-set-context@v1
@@ -32,7 +25,20 @@ jobs:
           method: kubeconfig
           kubeconfig: ${{ secrets.KUBE_CONFIG }}
           version: 1.21.0
+          
+      - name: Fazer login no registro Docker
+        run: docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_PASSWORD }}
 
-      - name: Deploy to AKS
+      - name: Construir imagem Docker
+        run: docker build -t smmota/thenewyorktimesapi:pt-br .
+        
+      - name: Publicar imagem Docker
+        run: docker push smmota/thenewyorktimesapi:pt-br
+
+      - name: Listar arquivos no diretório
         run: |
-          kubectl apply -f deployment.yaml
+          echo "Executando dir..."
+          dir      
+
+      - name: Implantação no Kubernetes
+        run: kubectl apply -f deployment.yaml
