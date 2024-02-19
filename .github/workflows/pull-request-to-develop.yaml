@@ -1,16 +1,34 @@
-name: [FEAT] Build & PR
+name: "[FEAT] Build & PR"
 
 on:
   push:
-    branch:
-      - 'feature**'  
+    branches:
+      - feature**
 
 jobs:
-  build:
-
+  ci-dotnet-core:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Set up 
+      - name: Verificar código 
+        uses: actions/checkout@v2
 
+      - name: Restaurar pacotes
+        run: dotnet restore
+
+      - name: Build
+        run: dotnet build
+
+  open-pr-to-develop:    
+    needs:
+      - ci-dotnet-core
+    runs-on: ubuntu-latest
+    steps:
+      - name: Open pull request to develop
+        uses: peter-evans/create-pull-request@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: develop
+          commit-message: "Automatically opened pull request"
+          title: "Automatically opened pull request"
+          body: "Este pull request foi aberto automaticamente pelo GitHub Actions."
