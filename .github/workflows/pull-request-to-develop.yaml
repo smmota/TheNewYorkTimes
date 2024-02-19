@@ -18,3 +18,11 @@ jobs:
 
       - name: Build
         run: dotnet build
+
+  open-pr-to-develop:    
+    needs:
+      - ci-dotnet-core
+    runs-on: ubuntu-latest
+    steps:
+      - name: Open pull request to develop
+        uses: peter-evans/create-pull-request@v3
