@@ -1,0 +1,35 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: thenewyorktimespod  
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: thenewyorktimespod
+  template:
+    metadata:
+      labels:
+        app: thenewyorktimespod
+    spec:
+      containers:
+        - name: thenewyorktimespod
+          image: smmota/thenewyorktimesapi:latest
+          ports:
+            - containerPort: 80
+
+---
+  
+apiVersion : v1
+kind: Service
+metadata:
+  name: thenewyorktimespod-service  
+spec:
+  selector:
+    app: thenewyorktimespod
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  type: LoadBalancer
+      

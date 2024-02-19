@@ -1,0 +1,12 @@
+apiVersion : v1
+kind: Pod
+metadata:
+  name: thenewyorktimespod
+  labels:
+    app: thenewyorktimespod
+spec:
+  containers:
+  - name: thenewyorktimespod
+    image: smmota/thenewyorktimesapi:latest
+    ports:
+    - containerPort: 80

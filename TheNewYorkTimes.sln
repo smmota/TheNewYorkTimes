@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33530.505
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TheNewYorkTimes", "TheNewYorkTimes\TheNewYorkTimes.csproj", "{88EBB0B1-57D4-4C6B-934E-0CF1A846E86F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TheNewYorkTimes.IntegrationTests", "TheNewYorkTimes.IntegrationTests\TheNewYorkTimes.IntegrationTests.csproj", "{009C001E-A54B-4784-89DC-78019FF9F67F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TheNewYorkTimes.UnitTests", "TheNewYorkTimes.UnitTests\TheNewYorkTimes.UnitTests.csproj", "{A2B157BD-7F1E-43E1-93CD-D9E41D4B0E72}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{951E60AD-4E92-446C-AC15-96870A231B7D}"
+	ProjectSection(SolutionItems) = preProject
+		.dockerignore = .dockerignore
+		.gitignore = .gitignore
+		azure-pipelines.yml = azure-pipelines.yml
+		deployment.yaml = deployment.yaml
+		Dockerfile = Dockerfile
+		README.md = README.md
+		pod.yaml = pod.yaml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{88EBB0B1-57D4-4C6B-934E-0CF1A846E86F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88EBB0B1-57D4-4C6B-934E-0CF1A846E86F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88EBB0B1-57D4-4C6B-934E-0CF1A846E86F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88EBB0B1-57D4-4C6B-934E-0CF1A846E86F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{009C001E-A54B-4784-89DC-78019FF9F67F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{009C001E-A54B-4784-89DC-78019FF9F67F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{009C001E-A54B-4784-89DC-78019FF9F67F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{009C001E-A54B-4784-89DC-78019FF9F67F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2B157BD-7F1E-43E1-93CD-D9E41D4B0E72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2B157BD-7F1E-43E1-93CD-D9E41D4B0E72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2B157BD-7F1E-43E1-93CD-D9E41D4B0E72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2B157BD-7F1E-43E1-93CD-D9E41D4B0E72}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F243A594-CF87-4AF4-884C-DEC806FF72E9}
+	EndGlobalSection
+EndGlobal
