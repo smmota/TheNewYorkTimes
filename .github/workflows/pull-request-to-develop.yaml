@@ -18,12 +18,3 @@ jobs:
 
       - name: Build
         run: dotnet build
-
-  #open-pr-to-develop:
-    #needs:
-      #- ci-dotnet-core
-    #runs-on: gh pr create
-    #with:
-      #target-branch: 'develop'
-    
-
