@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - name: Verificar código 
-      - uses: actions/checkout@v2
+        uses: actions/checkout@v2
 
       - name: Restaurar pacotes
         run: dotnet restore
