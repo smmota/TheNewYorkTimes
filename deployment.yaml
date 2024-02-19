@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: thenewyorktimespod
-          image: smmota/thenewyorktimesapi:latest
+          image: smmota/thenewyorktimesapi:pt-br
           ports:
             - containerPort: 80
 
