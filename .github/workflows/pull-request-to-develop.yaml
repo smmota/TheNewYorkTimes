@@ -1,16 +1,29 @@
-name: [FEAT] Build & PR
+name: Build & PR
 
 on:
   push:
-    branch:
+    branches:
       - 'feature**'  
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Set up 
+      - name: Verificar código 
+      - uses: actions/checkout@v2
+
+      - name: Restaurar pacotes
+        run: dotnet restore
+
+      - name: Build
+        run: dotnet build
+
+  #open-pr-to-develop:
+    #needs:
+      #- build
+    #runs-on: gh pr create
+    #with:
+      #target-branch: 'develop'
+    
 
