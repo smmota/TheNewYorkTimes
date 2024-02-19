@@ -26,3 +26,9 @@ jobs:
     steps:
       - name: Open pull request to develop
         uses: peter-evans/create-pull-request@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: develop
+          commit-message: "Automatically opened pull request"
+          title: "Automatically opened pull request"
+          body: "Este pull request foi aberto automaticamente pelo GitHub Actions."
