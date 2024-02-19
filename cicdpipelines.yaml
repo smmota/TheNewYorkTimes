@@ -30,10 +30,10 @@ jobs:
         run: docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_PASSWORD }}
 
       - name: Construir imagem Docker
-        run: docker build -t smmota/thenewyorktimesapi:pt-br .
+        run: docker build -t smmota/thenewyorktimesapi:latest .
         
       - name: Publicar imagem Docker
-        run: docker push smmota/thenewyorktimesapi:pt-br
+        run: docker push smmota/thenewyorktimesapi:latest
 
       - name: Listar arquivos no diretório
         run: |
