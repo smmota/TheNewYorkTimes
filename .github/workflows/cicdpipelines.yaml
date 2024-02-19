@@ -17,7 +17,7 @@ jobs:
         run: dotnet restore
 
       - name: Publicar aplicação
-        run dotnet publish -c Release -o ./publish
+        run: dotnet publish -c Release -o ./publish
 
       - name: Set up kubectl
         uses: azure/k8s-set-context@v1
