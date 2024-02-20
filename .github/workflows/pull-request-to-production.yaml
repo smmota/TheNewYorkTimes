@@ -1,0 +1,23 @@
+name: "2 - [DEV] Build, Test & PR"
+
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  ci-dotnet-core:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Verificar código 
+        uses: actions/checkout@v2
+            
+      - name: Restaurar pacotes
+        run: dotnet restore
+
+      - name: Build
+        run: dotnet build
+        
+      - name: Test
+        run: dotnet test

@@ -1,4 +1,4 @@
-name : CI/CD Pipeline
+name : "3 - [PROD] Build, Test & Publish
 
 on:
   push:
