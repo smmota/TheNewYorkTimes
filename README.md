@@ -6,7 +6,7 @@ Essas instruções permitirão que você obtenha uma cópia do projeto em opera�
 
 ## 📋 Objetivo
 
-Criar uma API que cadastre o usuario e faça o login retornando um token de autenticação para acessar os endpoints restritos da API. O usuário autenticado poderá cadastrar uma nova noticia, consultar uma notícia específica ou listar todas as noticias cadastradas. Apenas os usuários cadastrados com o perfil administrador conseguem listar todos os usuários cadastrados ou consultar um usuário específico.
+Criar uma API que cadastre o usuario e faça o login retornando um token de autenticação para acessar os endpoints restritos da API. O usuário autenticado poderá criar, consultar uma notícia específica ou listar todas as noticias cadastradas. Apenas os usuários com o perfil administrador conseguem consultar um usuário específico ou listar todos os usuários cadastrados.
 
 ## 🛠️ Construído com
 
@@ -36,7 +36,7 @@ Para clonar o projeto do repositório remoto para o repositório local, execute 
 
 "git clone -b develop https://github.com/smmota/TheNewYorkTimesWebApi.git"
 
-Para realizar alterações no projeto, após clone do repositório remoto, crie sua branch local utilizando o prefixo "feature/nome_da_branch"
+Para realizar alterações no projeto, crie sua branch local, utilizando a branch develop como base, com o prefixo "feature/nome_da_branch" como padrão
 
 #### Executando o projeto backend no Visual Studio 2022
 
