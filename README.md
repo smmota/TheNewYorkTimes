@@ -6,7 +6,7 @@ Essas instruções permitirão que você obtenha uma cópia do projeto em opera�
 
 ## 📋 Objetivo
 
-Criar uma API que cadastre o usuario e faça o login, a partir do login o usuario poderá tanto cadastrar uma noticia quanto listar as noticias
+Criar uma API que cadastre o usuario e faça o login retornando um token de autenticação para acessar os endpoints restritos da API. O usuário autenticado poderá cadastrar uma nova noticia, consultar uma notícia específica ou listar todas as noticias cadastradas. Apenas os usuários cadastrados com o perfil administrador conseguem listar todos os usuários cadastrados ou consultar um usuário específico.
 
 ## 🛠️ Construído com
 
@@ -17,11 +17,16 @@ Abaixo estão listadas as ferramentas utilizadas para o desenvolvimento dos proj
 
 ### 📌 Frameworks utilizados:
 
+- Docker
+- Kubernetes
+- AKS
+- Azure Database SQL
+
 #### Backend 
 - .Net Core 7.0 
 
 #### Versionamento
-- Azure DevOps Repos
+- Git Hub
 
 ### 🔧 Instalação
 
@@ -29,7 +34,9 @@ Abaixo estão listadas as ferramentas utilizadas para o desenvolvimento dos proj
 
 Para clonar o projeto do repositório remoto para o repositório local, execute o comando abaixo.
 
-"git clone https://dev.azure.com/RM350390/TechChallengeFase3/_git/TechChallengeFase3"
+"git clone -b develop https://github.com/smmota/TheNewYorkTimesWebApi.git"
+
+Para realizar alterações no projeto, após clone do repositório remoto, crie sua branch local utilizando o prefixo "feature/nome_da_branch"
 
 #### Executando o projeto backend no Visual Studio 2022
 
@@ -40,5 +47,7 @@ Com a solução carregada na IDE, altere o projeto StartUp para "TheNewYorkTimes
 A solução será compilada e o swaager da Web API será carregado no browser
 
 ## ⚙️ Executando os testes
+
+Para rodar os testes unitários e testes de integração utilize a ide do visual studio ou execute o comando "dotnet test" no Package Manager Console.
 
 Os testes foram realizados com dados mock para validar se os dados de integração e unitarios foram realizados corretamente, se os parâmetros de entrada estao corretos e se as validações funcionam.

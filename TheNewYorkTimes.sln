@@ -13,11 +13,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		.dockerignore = .dockerignore
 		.gitignore = .gitignore
-		azure-pipelines.yml = azure-pipelines.yml
-		.github\workflows\cicdpipelines.yaml = .github\workflows\cicdpipelines.yaml
 		deployment.yaml = deployment.yaml
 		Dockerfile = Dockerfile
-		pod.yaml = pod.yaml
+		.github\workflows\production.yaml = .github\workflows\production.yaml
+		.github\workflows\pull-request-to-develop.yaml = .github\workflows\pull-request-to-develop.yaml
+		.github\workflows\pull-request-to-production.yaml = .github\workflows\pull-request-to-production.yaml
 		README.md = README.md
 	EndProjectSection
 EndProject
