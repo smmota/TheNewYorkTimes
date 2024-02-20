@@ -1,15 +1,9 @@
-name: "[FEAT] - Build & PR"
+name: "1 - [FEAT] - Build & PR"
 
 on:
   push:
     branches:
       - feature**
-
-permissions:
-  contents: write
-  pull-requests: write
-  issues: write
-  repository-projects: write
 
 jobs:
   ci-dotnet-core:
@@ -24,22 +18,3 @@ jobs:
 
       - name: Build
         run: dotnet build
-
-  open-pr-to-develop:    
-    needs:
-      - ci-dotnet-core
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-  
-      - run: git remote prune origin
-  
-      - name: Open pull request to develop
-        uses: peter-evans/create-pull-request@v3.5.1        
-  
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          branch: develop
-          commit-message: Automatically opened pull request
-          title: Automatically opened pull request
-          body: Este pull request foi aberto automaticamente pelo GitHub Actions.
