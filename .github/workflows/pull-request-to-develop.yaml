@@ -1,4 +1,4 @@
-name: "[FEAT] Build & PR"
+name: FEAT - Build & PR
 
 on:
   push:
@@ -29,6 +29,6 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: develop
-          commit-message: "Automatically opened pull request"
-          title: "Automatically opened pull request"
-          body: "Este pull request foi aberto automaticamente pelo GitHub Actions."
+          commit-message: Automatically opened pull request
+          title: Automatically opened pull request
+          body: Este pull request foi aberto automaticamente pelo GitHub Actions.
