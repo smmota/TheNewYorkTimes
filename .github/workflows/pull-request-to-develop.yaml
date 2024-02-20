@@ -1,9 +1,14 @@
-name: FEAT Build & PR
+name: "[FEAT] Build & PR"
 
 on:
   push:
     branches:
       - feature**
+
+permissions:
+  pull-requests: write
+  issues: write
+  repository-projects: write
 
 jobs:
   ci-dotnet-core:
