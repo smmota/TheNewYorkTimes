@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: Verificar código 
         uses: actions/checkout@v2
-
+            
       - name: Restaurar pacotes
         run: dotnet restore
 
@@ -24,10 +24,12 @@ jobs:
       - ci-dotnet-core
     runs-on: ubuntu-latest
     steps:
-      - name: Open pull request to develop
-        uses: peter-evans/create-pull-request@v3.5.1
-
+      - uses: actions/checkout@v2
+  
       - run: git remote prune origin
+  
+      - name: Open pull request to develop
+        uses: peter-evans/create-pull-request@v3.5.1        
   
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
