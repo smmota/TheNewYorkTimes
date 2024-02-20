@@ -1,4 +1,4 @@
-name: FEAT - Build & PR
+name: "[FEAT] Build & PR"
 
 on:
   push:
@@ -26,6 +26,9 @@ jobs:
     steps:
       - name: Open pull request to develop
         uses: peter-evans/create-pull-request@v3.5.1
+
+      - run: git remote prune origin
+  
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: develop
