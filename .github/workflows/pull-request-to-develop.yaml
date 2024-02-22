@@ -5,11 +5,8 @@ on:
     branches:
       - feature**
 
-permissions:
-  contents: write
-  pull-requests: write
-  issues: write
-  repository-projects: write
+permissions:  
+  pull-requests: write  
 
 jobs:
   ci-dotnet-core:
