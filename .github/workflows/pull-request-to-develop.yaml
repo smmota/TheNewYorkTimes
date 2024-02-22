@@ -26,15 +26,13 @@ jobs:
         run: dotnet build
 
   open-pr-to-develop:    
+    name: pr-to-develop
     runs-on: ubuntu-latest
-    needs:
-      - ci-dotnet-core
+    needs: ci-dotnet-core 
     if: github.event.action == 'opened'
     
     steps:
-      - uses: actions/first-interaction@v1
-  
-      - run: git remote prune origin
+      - uses: actions/first-interaction@v1      
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           pr-message: |-
