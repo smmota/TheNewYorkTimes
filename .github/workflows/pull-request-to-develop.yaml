@@ -1,9 +1,12 @@
-name: "1 - [FEAT] Build & PR Test"
+name: "1 - [FEAT] Build & PR"
 
 on:
   push:
     branches:
       - feature**
+
+permissions:  
+  pull-requests: write  
 
 jobs:
   ci-dotnet-core:
@@ -18,3 +21,16 @@ jobs:
 
       - name: Build
         run: dotnet build
+
+  #open-pr-to-develop:    
+    #name: open-pr-to-develop
+    #runs-on: ubuntu-latest
+    #needs: ci-dotnet-core 
+    ##if: github.event.action == 'opened'
+    
+    #steps:
+      #- uses: actions/first-interaction@v1      
+        #with:
+          #repo-token: ${{ secrets.GITHUB_TOKEN }}
+          #pr-message: |-
+            #Este pull request foi aberto automaticamente pelo GitHub Actions.       
