@@ -33,7 +33,7 @@ jobs:
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v6  
         with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          repo-token: ${{ secrets.NEW_GITHUB_TOKEN }}
           commit-message: Este pull request foi aberto automaticamente pelo GitHub Actions.
           title: Pull Request To Develop
           body: PR aberto automaticamente
