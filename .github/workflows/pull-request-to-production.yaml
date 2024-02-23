@@ -6,8 +6,7 @@ on:
       - develop
  
 jobs:
-  build:
-    name: build
+  ci-dotnet-core:
     runs-on: ubuntu-latest
 
     steps:
@@ -20,11 +19,5 @@ jobs:
       - name: Build
         run: dotnet build
         
-  tests:
-    name: test
-    runs-on: ubuntu-latest
-    needs: build
-
-    steps:
       - name: Test
         run: dotnet test
