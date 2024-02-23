@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Verificar código 
+      - name: Verificar código
         uses: actions/checkout@v2
             
       - name: Restaurar pacotes
