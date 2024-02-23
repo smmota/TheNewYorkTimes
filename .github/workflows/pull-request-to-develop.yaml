@@ -34,7 +34,7 @@ jobs:
         uses: peter-evans/create-pull-request@v6  
         with:
           lfs: true
-          token: ${{ secrets.NEW_GITHUB_TOKEN }}
+          token: ${{ secrets.ACCESS_TOKEN }}
           commit-message: Este pull request foi aberto automaticamente pelo GitHub Actions.
           title: Pull Request To Develop
           body: PR aberto automaticamente
