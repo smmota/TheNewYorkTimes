@@ -22,15 +22,18 @@ jobs:
       - name: Build
         run: dotnet build
 
-  #open-pr-to-develop:    
-    #name: open-pr-to-develop
-    #runs-on: ubuntu-latest
-    #needs: ci-dotnet-core 
-    ##if: github.event.action == 'opened'
+  open-pr-to-develop:    
+    name: open-pr-to-develop
+    runs-on: ubuntu-latest
+    needs: ci-dotnet-core 
     
-    #steps:
-      #- uses: actions/first-interaction@v1      
-        #with:
-          #repo-token: ${{ secrets.GITHUB_TOKEN }}
-          #pr-message: |-
-            #Este pull request foi aberto automaticamente pelo GitHub Actions.       
+    steps:
+      - uses: actions/checkout@v4
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v6  
+        with:
+          commit-message: Este pull request foi aberto automaticamente pelo GitHub Actions.
+          title: Pull Request To Develop
+          body: PR aberto automaticamente
+          branch: develop
+          
