@@ -9,7 +9,8 @@ permissions:
   pull-requests: write  
 
 jobs:
-  ci-dotnet-core:
+  build:
+    name: build
     runs-on: ubuntu-latest
 
     steps:
@@ -22,19 +23,19 @@ jobs:
       - name: Build
         run: dotnet build
 
-  open-pr-to-develop:    
-    name: open-pr-to-develop
-    runs-on: ubuntu-latest
-    needs: ci-dotnet-core 
+  #open-pr-to-develop:    
+  #  name: open-pr-to-develop
+  #  runs-on: ubuntu-latest
+  #  needs: build 
     
-    steps:
-      - uses: actions/checkout@v4
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v6  
-        with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: Este pull request foi aberto automaticamente pelo GitHub Actions.
-          title: Pull Request To Develop
-          body: PR aberto automaticamente
-          branch: develop
+  #  steps:
+  #    - uses: actions/checkout@v4
+  #    - name: Create Pull Request
+  #      uses: peter-evans/create-pull-request@v6  
+  #      with:
+  #        repo-token: ${{ secrets.GITHUB_TOKEN }}
+  #        commit-message: Este pull request foi aberto automaticamente pelo GitHub Actions.
+  #        title: Pull Request To Develop
+  #        body: PR aberto automaticamente
+  #        branch: develop
           
