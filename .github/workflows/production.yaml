@@ -1,7 +1,9 @@
 name : "3 - [PROD] Build, Test & Publish"
 
 on:
-  push:
+  pull_request:
+    types:
+      - closed 
     branches:
       - main
 

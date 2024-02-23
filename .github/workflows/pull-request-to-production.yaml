@@ -1,7 +1,9 @@
 name: "2 - [DEV] Build, Test & PR"
 
 on:
-  push:
+  pull_request:
+    types:
+      - closed
     branches:
       - develop
  
