@@ -1,4 +1,4 @@
-name: "2 - [DEV] Build, Test & PR"
+name: "2 - [DEV] Build, Test & PR PRD"
 
 on:
   pull_request:
