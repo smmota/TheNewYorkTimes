@@ -279,7 +279,7 @@ app.MapGet("/api/v1/Usuario", async (IUsuarioRepository repository, IMapper _map
 
 #region Login
 
-app.MapPost("/api/v2/login", async (IValidator<Login> validators, IUsuarioRepository usuarioRepository, IMapper _mapper, IHashService hashService, ITokenService tokenService, LoginInputModel model) =>
+app.MapPost("/api/v1/login", async (IValidator<Login> validators, IUsuarioRepository usuarioRepository, IMapper _mapper, IHashService hashService, ITokenService tokenService, LoginInputModel model) =>
 {
     var viewModel = _mapper.Map<LoginViewModel>(model);
     var objModel = _mapper.Map<Login>(viewModel);
