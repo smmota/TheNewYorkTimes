@@ -12,8 +12,8 @@ using TheNewYorkTimes.Data;
 namespace TheNewYorkTimes.Migrations
 {
     [DbContext(typeof(SqlContext))]
-    [Migration("20240218185713_AtualizaCampoUsuario")]
-    partial class AtualizaCampoUsuario
+    [Migration("20240313002826_InitialLocal")]
+    partial class InitialLocal
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
