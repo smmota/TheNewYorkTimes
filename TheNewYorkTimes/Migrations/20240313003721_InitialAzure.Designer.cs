@@ -12,7 +12,7 @@ using TheNewYorkTimes.Data;
 namespace TheNewYorkTimes.Migrations
 {
     [DbContext(typeof(SqlContext))]
-    [Migration("20240218181919_InitialAzure")]
+    [Migration("20240313003721_InitialAzure")]
     partial class InitialAzure
     {
         /// <inheritdoc />
@@ -82,7 +82,7 @@ namespace TheNewYorkTimes.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<string>("Role")
+                    b.Property<string>("Perfil")
                         .IsRequired()
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
